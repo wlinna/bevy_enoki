@@ -87,7 +87,10 @@ impl<M: Particle2dMaterial> Plugin for Particle2dMaterialPlugin<M> {
                 Render,
                 (
                     queue_particles::<M>.in_set(RenderSystems::Queue),
-                    prepare_particles_instance_buffers::<M>.in_set(RenderSystems::PrepareResources),
+                    // The view bind group must see the view buffer after it is resized.
+                    prepare_particles_instance_buffers::<M>
+                        .in_set(RenderSystems::PrepareResources)
+                        .after(bevy_render::view::prepare_view_uniforms),
                 ),
             );
     }

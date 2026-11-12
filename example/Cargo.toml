@@ -33,3 +33,7 @@ path = "src/attractor.rs"
 [[bin]]
 name = "relative_position"
 path = "src/relative_position.rs"
+
+[[bin]]
+name = "split_screen"
+path = "src/split_screen.rs"
