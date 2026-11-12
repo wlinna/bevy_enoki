@@ -40,3 +40,7 @@ path = "src/relative_position.rs"
 [[bin]]
 name = "bsn"
 path = "src/bsn.rs"
+
+[[bin]]
+name = "split_screen"
+path = "src/split_screen.rs"
